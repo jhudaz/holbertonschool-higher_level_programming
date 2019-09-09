@@ -1,2 +1,2 @@
-#!/usr/bin/python3
-print("Holberton School")
+#!/bin/bash
+python3 main.py
