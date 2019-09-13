@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 from sys import exit, argv
 from calculator_1 import add, sub, div, mul
-
 if __name__ == "__main__":
     count = len(argv)
-    print(count)
     if count != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
@@ -12,7 +10,6 @@ if __name__ == "__main__":
         operator = argv[2]
         a = int(argv[1])
         b = int(argv[3])
-        print("hola")
         if operator == "+":
             print("{} + {} = {}".format(a, b, add(a, b)))
         elif operator == "-":
