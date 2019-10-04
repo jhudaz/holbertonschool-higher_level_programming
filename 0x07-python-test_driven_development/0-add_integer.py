@@ -1,10 +1,7 @@
 #!/usr/bin/python3
 
-"""
-"add" module.
-
+""" module "adds"
 add module supplies one function, add_integer().  For example,
-
 >>> add_integer(2, 98)
 100
 """
