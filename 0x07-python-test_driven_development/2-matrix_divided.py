@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 
-"""
-`matrix` module
-module to manipulate a matrix
+""" module "matrix"
+matrix module supplies one function, matrix_divided().  For example,
+>>> matrix_divided([[1,2,3],[4,5,6]], 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 """
 
 
 def matrix_divided(matrix, div):
     """
-    matrix_divided - divide every element in a  matrix
+    matrix_divided - divide every element in a  matrix by a divider
     """
     typeError1 = 'matrix must be a matrix (list of lists) of integers/floats'
     typeError2 = 'Each row of the matrix must have the same size'
@@ -17,7 +18,7 @@ def matrix_divided(matrix, div):
 
     """" very if every element in the matrix is a list to take the length"""
     for i in matrix:
-        if not isinstance(matrix[0], list):
+        if not isinstance(i, list):
             raise TypeError(typeError1)
         else:
             rowLength = len(matrix[0])
@@ -29,7 +30,9 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError(zeroDivision)
     if not isinstance(matrix, list):
         raise TypeError(typeError1)
-    if len(matrix) == 0:
+    if len(matrix) == 0 or matrix == []:
+        raise TypeError(typeError1)
+    if matrix is None:
         raise TypeError(typeError1)
 
     for i in matrix:
