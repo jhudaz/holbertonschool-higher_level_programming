@@ -1,0 +1,80 @@
+``add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+    1) two integers
+    >>> add_integer(7, 9)
+    16
+    
+    2) exact float - integer
+    >>> add_integer(3.0, 5)
+    8
+    
+    3) float with decimal - integer
+    >>> add_integer(3.6, 6)
+    9
+
+    4) integer - float with decimal
+    >>> add_integer(5, 3.6)
+    8
+
+    5) negative int - negative int
+    >>> add_integer(-4, -4)
+    -8
+
+    6) negative int - int
+    >>> add_integer(-4, 7)
+    3
+
+    7) int - negative int
+    >>> add_integer(7, -4)
+    3
+
+    8) negative float - negative float
+    >>> add_integer(-4.4, -5.5)
+    -9
+
+    10) type return with int 
+    >>> type(add_integer(5, 5))
+    <class 'int'>
+
+    11) type return with float 
+    >>> type(add_integer(5.6, 5.9))
+    <class 'int'>
+
+    12) string - int
+    >>> add_integer("holberton", 5)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    13) int - string
+    >>> add_integer(5, "School")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    14) one integer
+    >>> add_integer(6)
+    104
+
+    15) one float
+    >>> add_integer(6.4)
+    104
+
+    16) one string
+    >>> add_integer("holberton")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    17) no parameters
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+    
+
+
+
