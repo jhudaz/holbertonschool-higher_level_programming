@@ -74,6 +74,10 @@ Now use it:
     Traceback (most recent call last):
     TypeError: add_integer() missing 1 required positional argument: 'a'
 
+    18) float - float
+    >>> add_integer(5.9, 5.9)
+    10
+
     
 
 
