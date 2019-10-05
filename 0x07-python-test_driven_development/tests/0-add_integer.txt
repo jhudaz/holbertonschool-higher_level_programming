@@ -78,6 +78,16 @@ Now use it:
     >>> add_integer(5.9, 5.9)
     10
 
+    19) max integer - integer
+    >>> add_integer(1e400, 5)
+    Traceback (most recent call last):
+    OverflowError
+
+    20) integer - max integer
+    >>> add_integer(5, 1e400)
+    Traceback (most recent call last):
+    OverflowError
+
     
 
 
