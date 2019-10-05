@@ -34,3 +34,8 @@ Now use it:
     >>> print_square("Hello")
     Traceback (most recent call last):
     TypeError: size must be an integer
+
+    7) receive more than one argument
+    >>> print_square(1, 2)
+    Traceback (most recent call last):
+    TypeError: print_square() takes 1 positional argument but 2 were given
