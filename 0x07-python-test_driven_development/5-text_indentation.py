@@ -1,5 +1,16 @@
 #!/usr/bin/python3
+
+"""
+module "text"
+text module supplies one function:
+text_indentation()
+"""
+
+
 def text_indentation(text):
+    """
+    Return a string with indentation
+    """
     if not isinstance(text, str):
         raise TypeError('text must be a string')
     newStr1 = text.replace('.', '.\n\n')
