@@ -1,0 +1,15 @@
+``text`` module
+======================
+
+Using ``text_indentation``
+-------------------
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now use it:
+    1) simple text with separator character
+    >>> text_indentation('Hello. Holberton? School')
+    Hello.
+    <BLANKLINE>
+    Holberton?
+    <BLANKLINE>
+    School
