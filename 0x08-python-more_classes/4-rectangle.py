@@ -40,7 +40,7 @@ class Rectangle:
         return stri
 
     def __repr__(self):
-        return "Rectangle ({}, {})".format(
+        return "Rectangle({}, {})".format(
             eval(str(self.width)), eval(str(self.height)))
 
     def area(self):
