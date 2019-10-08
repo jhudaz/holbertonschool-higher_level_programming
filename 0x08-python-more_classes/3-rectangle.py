@@ -29,6 +29,8 @@ class Rectangle:
         self.__height = height
 
     def __str__(self):
+        if self.width == 0 or self.height == 0:
+            return ""
         stri = ""
         for i in range(self.height):
             for j in range(self.width):
