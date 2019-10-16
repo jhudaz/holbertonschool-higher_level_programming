@@ -14,3 +14,4 @@ def number_of_lines(filename=""):
             if data[i] == "\n":
                 count += 1
         return count
+    file.close()
