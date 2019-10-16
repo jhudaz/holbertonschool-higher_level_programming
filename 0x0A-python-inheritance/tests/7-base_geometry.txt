@@ -1,0 +1,14 @@
+``Base Geometry`` module
+======================
+
+Using ``area``
+-------------------
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Now use it:
+    1) matrix empty
+    >>> BaseGeometry.integer_validator( 56, "jhon", "value")
+    Traceback (most recent call last):
+    TypeError: jhon must be an integer
+    
+
