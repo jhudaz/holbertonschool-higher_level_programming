@@ -1,0 +1,34 @@
+``matrix`` module
+======================
+
+Using ``matrix_divided``
+-------------------
+    >>> MyList = __import__('1-my_list').MyList
+
+Now use it:
+    1) list with integers
+    >>> MyList.print_sorted([56,10,450,556])
+    [10, 56, 450, 556]
+
+    2) list with floats
+    >>> MyList.print_sorted([6.4, 3.2, 6.7])
+    [3.2, 6.4, 6.7]
+
+    3) list with string
+    >>> MyList.print_sorted(['b', 'a', 'c'])
+    ['a', 'b', 'c']
+
+    4) no parameters
+    >>> MyList.print_sorted()
+    Traceback (most recent call last):
+    TypeError: print_sorted() missing 1 required positional argument: 'self'
+
+    5) empty list
+    >>> MyList.print_sorted([])
+    []
+
+    6) list of list
+    >>> MyList.print_sorted([[3,4,6],[2,7,9],[1,7,8]])
+    [[1, 7, 8], [2, 7, 9], [3, 4, 6]]
+
+
