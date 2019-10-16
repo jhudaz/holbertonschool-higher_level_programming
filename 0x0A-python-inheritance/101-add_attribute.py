@@ -8,7 +8,7 @@ def add_attribute(cls, attribute, value):
     Returns:
         Nothing
     """
-    if hasattr(cls, attribute):
+    if not hasattr(cls, '__dict__'):
         raise TypeError("can't add new attribute")
     else:
         setattr(cls, attribute, value)
