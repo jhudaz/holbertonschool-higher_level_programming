@@ -8,7 +8,7 @@ def add_attribute(cls, attribute, value):
     Returns:
         Nothing
     """
-    if isinstance(cls, (int, float, str, list, tuple)):
+    if hasattr(cls, attribute):
         raise TypeError("can't add new attribute")
     else:
         setattr(cls, attribute, value)
