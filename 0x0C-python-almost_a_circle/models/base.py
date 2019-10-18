@@ -1,18 +1,18 @@
-#!/usr/bin/bash
-""" model Base
+#!/usr/bin/python3
+""" model `Base`
 """
 
 
 class Base:
-    """Base class
+    """class `Base`
     """
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """init
-
+        """constructor
+        
         Keyword Arguments:
-            id {int} -- id of every object (default: {None})
+            id {int} -- (default: {None})
         """
         self.id = id
 
