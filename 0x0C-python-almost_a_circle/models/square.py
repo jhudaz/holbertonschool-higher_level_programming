@@ -20,10 +20,6 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """size setter"""
-        if type(value) != int:
-            raise TypeError('width must be an integer')
-        if value <= 0:
-            raise ValueError('width must be > 0')
         self.width = value
         self.height = value
 
@@ -56,3 +52,8 @@ class Square(Rectangle):
                 self.x = kwargs['x']
             if 'y' in kwargs:
                 self.y = kwargs['y']
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Square"""
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+                'size': self.width}
