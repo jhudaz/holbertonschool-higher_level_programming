@@ -13,21 +13,11 @@ class Base:
         Keyword Arguments:
             id {int} -- (default: {None})
         """
-        self.id = id
-
-    @property
-    def id(self):
-        """id getter"""
-        return self.__id
-
-    @id.setter
-    def id(self, value):
-        """id setter"""
-        if value is not None:
-            self.__id = value
+        if id is not None:
+            self.id = id
         else:
             Base.__nb_objects += 1
-            self.__id = Base.__nb_objects
+            self.id = Base.__nb_objects
 
     """methods"""
 
