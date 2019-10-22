@@ -8,22 +8,16 @@ class Square(Rectangle):
         """constructor"""
         super().__init__(size, size, x, y, id)
 
-    """getters"""
-
     @property
     def size(self):
         """size getter"""
         return super().width
-
-    """setters"""
 
     @size.setter
     def size(self, value):
         """size setter"""
         self.width = value
         self.height = value
-
-    """methods"""
 
     def __str__(self):
         """return a string with the data passed"""
