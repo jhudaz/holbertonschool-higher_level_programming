@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" model `Base`"""
+"""model `Base`"""
 import json
 
 
@@ -36,13 +36,17 @@ class Base:
         file = cls.__name__ + ".json"
         content = ""
         lst = []
-        for obj in list_objs:
-            lst.append(obj.to_dictionary())
+        if list_objs is None:
+            with open(file, "w", encoding="utf-8") as fle:
+                fle.write([])
+        else:
+            for obj in list_objs:
+                lst.append(obj.to_dictionary())
 
-        content = cls.to_json_string(lst)
+            content = cls.to_json_string(lst)
 
-        with open(file, "w", encoding="utf-8") as fle:
-            fle.write(content)
+            with open(file, "w", encoding="utf-8") as fle:
+                fle.write(content)
 
     @classmethod
     def create(cls, **dictionary):
