@@ -1,8 +1,11 @@
 #!/usr/bin/python3
-"""Unit test for the Base class"""
+"""
+Unit test for the Base class
+"""
 
 import unittest
 import json
+import pep8
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -13,8 +16,24 @@ class TestBase(unittest.TestCase):
     Test cases for the Base class
     """
 
+    def test_pep8_conformance(self):
+        """
+        Test that we conform to PEP8.
+        """
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['models/rectangle.py'])
+        self.assertEqual(result.total_errors, 0, "Fix pep8")
+
+    def tearDown(self):
+        """
+        Reset the nb_objects
+        """
+        Base._Base__nb_objects = 0
+
     def test_docstring(self):
-        """Testing docstring"""
+        """
+        Testing docstring
+        """
         self.assertIsNotNone(Base.__doc__)
 
     def test_documentation(self):
