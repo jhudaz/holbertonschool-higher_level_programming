@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Unit test for the Base class
-"""
-
+"""Unit test for the Base class"""
 import unittest
 import json
 import pep8
@@ -129,13 +126,6 @@ class TestBase(unittest.TestCase):
         jsconv = Base.from_json_string(string)
         self.assertTrue(type(jsconv) is list)
         self.assertEqual(len(jsconv), 2)
-
-    def test_from_json_string_empty_string(self):
-        """
-        Test from json to string conversion managing empty strings
-        """
-        self.assertEqual(Base.from_json_string(""), [])
-        self.assertEqual(Base.from_json_string(None), [])
 
     def test_jfile_none(self):
         """
