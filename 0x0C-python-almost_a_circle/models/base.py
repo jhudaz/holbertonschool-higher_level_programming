@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """model `Base`"""
 import json
+import turtle
 
 
 class Base:
@@ -30,6 +31,12 @@ class Base:
         else:
             return json.loads(json_string)
 
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """turtle"""
+        print(list_rectangles)
+        print(list_squares)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """writes the JSON string representation of list_objs to a file"""
@@ -57,11 +64,36 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """from_json_string    return a string """
-        """create"""
-
         """returns a list of instances"""
         name = cls.__name__+".json"
+        lst = []
+        try:
+            with open(name, encoding="utf-8") as file:
+                data = file.read()
+                json_data = cls.from_json_string(data)
+                new = [cls.create(**obj) for obj in json_data]
+                return new
+
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """writes the JSON string representation of list_objs to a file"""
+        with open(cls.__name__+".csv", "w", encoding="utf-8") as fle:
+            lst = []
+            if list_objs is None:
+                fle.write(cls.to_json_string([]))
+            else:
+                for obj in list_objs:
+                    lst.append(obj.to_dictionary())
+                content = cls.to_json_string(lst)
+                fle.write(content)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """returns a list of instances"""
+        name = cls.__name__+".csv"
         lst = []
         try:
             with open(name, encoding="utf-8") as file:
