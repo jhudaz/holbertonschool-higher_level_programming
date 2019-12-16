@@ -13,7 +13,8 @@ if __name__ == "__main__":
     }
     db = MySQLdb.connect(**db_conf)
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name like 'N%' ORDER BY id")
+    cursor.execute(
+        "SELECT * FROM states WHERE name like BINARY 'N%' ORDER BY id")
     states = cursor.fetchall()
     for state in states:
         print(state)
