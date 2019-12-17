@@ -14,7 +14,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect(**db_conf)
     cursor = db.cursor()
     query = """ SELECT * FROM states
-                WHERE name like BINARY 'N%'
+                WHERE BINARY name = '{}'
                 ORDER BY id
             """.format(sys.argv[4])
     cursor.execute(query)
