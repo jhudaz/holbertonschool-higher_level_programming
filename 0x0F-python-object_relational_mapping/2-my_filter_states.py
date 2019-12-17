@@ -13,10 +13,10 @@ if __name__ == "__main__":
     }
     db = MySQLdb.connect(**db_conf)
     cursor = db.cursor()
-    query = "   SELECT * FROM states\
-                WHERE name = '{}'   \
-                ORDER BY id         \
-            ".format(sys.argv[4])
+    query = """ SELECT * FROM states
+                WHERE name like BINARY 'N%'
+                ORDER BY id
+            """.format(sys.argv[4])
     cursor.execute(query)
     states = cursor.fetchall()
     for state in states:
