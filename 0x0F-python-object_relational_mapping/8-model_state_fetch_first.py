@@ -41,5 +41,5 @@ if __name__ == "__main__":
             state = session.query(State.id, State.name).first()
             session.commit()
             print("{}: {}".format(state[0], state[1]))
-        except NoResultFound:
+        except TypeError:
             print("")
