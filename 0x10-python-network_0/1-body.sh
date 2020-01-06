@@ -1,3 +1,3 @@
 #!/bin/bash
 #code 200 body
-curl -sfX GET $1
+curl -sLfX GET $1
