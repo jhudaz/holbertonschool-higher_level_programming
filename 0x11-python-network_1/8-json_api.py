@@ -11,9 +11,14 @@ if __name__ == "__main__":
     else:
         q = ""
 
-    r = requests.post('http://0.0.0.0:5000/search_user', data={'q': q}).json()
+    r = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
 
-    if 'id' in r and 'name' in r:
-        print("[{}] {}".format(r['id'], r['name']))
-    else:
-        print("No result")
+    try:
+        r.json()
+
+        if 'id' in r and 'name' in r:
+            print("[{}] {}".format(r['id'], r['name']))
+        else:
+            print("No result")
+    exception:
+        print("Not a valid JSON")
