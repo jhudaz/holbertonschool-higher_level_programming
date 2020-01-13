@@ -8,4 +8,4 @@ if __name__ == "__main__":
     url = argv[1]
     r = requests.get(url)
     data = r.headers
-    print("{}".format(data['x-request-id']))
+    print("{}".format(data.get('x-request-id')))
