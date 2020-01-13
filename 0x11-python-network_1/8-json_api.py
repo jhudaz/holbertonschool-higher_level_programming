@@ -11,7 +11,7 @@ if __name__ == "__main__":
     else:
         q = ""
 
-    r = requests.post('http://0.0.0.0:5000/search_user', data=q).json()
+    r = requests.post('http://0.0.0.0:5000/search_user', data={'q': q}).json()
 
     if 'id' in r and 'name' in r:
         print("[{}] {}".format(r['id'], r['name']))
