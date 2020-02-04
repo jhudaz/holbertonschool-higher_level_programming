@@ -16,6 +16,7 @@ Scope of variables
 What are the arithmetic operators and how to use them
 How to manipulate dictionary
 How to import a file
+
 |TASK|DESCRIPTION|
 |---|---|
 |0. First constant, first print |Write a script that prints “Javascript is amazing”|
