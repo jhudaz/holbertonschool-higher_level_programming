@@ -1,5 +1,5 @@
 #!/usr/bin/node
-let i = 1;
+let i = 0;
 exports.logMe = function (item) {
   console.log(`${i}: ${item}`);
   i++;
