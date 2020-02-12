@@ -3,7 +3,7 @@ const request = require('request');
 
 request(process.argv[2], (err, res, body) => {
   if (err) console.log(err);
-  if (res === 200) {
+  if (res) {
     const response = JSON.parse(body);
     const dict = {};
     response.map(value => (dict[value.userId] = 0));
