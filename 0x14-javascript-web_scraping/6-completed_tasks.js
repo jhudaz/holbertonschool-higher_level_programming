@@ -3,12 +3,7 @@ const request = require('request');
 const args = process.argv.slice(2);
 const url = args[0];
 
-const options = {
-  url: url,
-  method: 'GET'
-};
-
-request(options, (err, res, body) => {
+request(url, (err, res, body) => {
   if (err) console.log(err);
   if (res) {
     const response = JSON.parse(body);
