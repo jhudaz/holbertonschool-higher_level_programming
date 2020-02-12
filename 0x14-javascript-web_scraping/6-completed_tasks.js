@@ -1,9 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
-const args = process.argv.slice(2);
-const url = args[0];
 
-request(url, (err, res, body) => {
+request(process.argv[2], (err, res, body) => {
   if (err) console.log(err);
   if (res) {
     const response = JSON.parse(body);
