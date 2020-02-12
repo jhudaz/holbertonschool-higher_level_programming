@@ -14,11 +14,10 @@ request(options, (err, res, body) => {
     const response = JSON.parse(body);
     const ids = [...new Set(response.map(value => value.userId))];
     const dict = {};
-
     ids.map(id => {
       let count = 0;
       response.map(value => {
-        if (id === value.userId && value.completed) { count++; }
+        if (id === value.userId && value.completed) count++;
       });
       dict[id] = count;
     });
